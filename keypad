@@ -1,0 +1,9 @@
+salt-call saltutil.sync_all
+salt-call state.sls system
+salt-call state.sls salt
+salt-call state.highstate
+
+
+
+
+systemctl status nginx - check the error for nginx

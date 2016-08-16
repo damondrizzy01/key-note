@@ -1,0 +1,358 @@
+1  cd /etc/salt/
+    2  sysctl kernel.hostname=salt-stg
+    3  echo "salt-stg" > /etc/hostname
+    4  ls
+    5  vi minion_id
+    6  git clone https://github.com/namshi/saltstack.git salt
+    7  git clone https://github.com/namshi/salt-base.git salt
+    8  ls
+    9  cp minion* ./salt
+   10  cp -r minion* ./salt/
+   11  ls
+   12  cp -R minion* ./salt/
+   13  mv minion* ./salt/
+   14  ls
+   15  mv p* ./salt/
+   16  ls
+   17  ls salt/
+   18  ls
+   19  mv salt/* .
+   20  ls
+   21  ls -a
+   22  ls -al salt/.git
+   23  mv .git/ ./
+   24  ll
+   25  ls -a
+   26  ls salt/
+   27  ll
+   28  cd salt
+   29  ll
+   30  mv .g* ../
+   31  ls
+   32  ls -a
+   33  cd ../
+   34  rmdir
+   35  rmdir salt
+   36  ls -a
+   37  vi minion
+   38  salt-call saltutil.sync_all --local
+   39  git status
+   40  apt-get install salt-master
+   41  salt-call state.sls salt.master --local
+   42  vi pillar/staging/aws.sls
+   43  salt-call grains.get ec2:region --local
+   44  salt-call grains.get ec2 --local
+   45  pip install boto
+   46  apt install python-pip
+   47  pip install boto
+   48  git status
+   49  git rm pillar/staging/aws.sls
+   50  rm pillar/staging/aws.sls
+   51  ls
+   52  git status
+   53  git diff
+   54  git pull --rebase
+   55  git checkout salt-india
+   56  salt-call state.sls salt.master --local
+   57  salt-call saltutil.sync_all --local
+   58  salt-call pillar.items --local
+   59  vi pillar/top.sls
+   60  git status
+   61  git pull --rebase
+   62  salt-call pillar.items --local
+   63  git pull --rebase
+   64  salt-call pillar.items --local
+   65  salt-call pillar.get config_aws --local
+   66  salt-call state.sls salt.master --local
+   67  git pull --rebase
+   68  salt-call state.sls salt.master --local
+   69  ls
+   70  ls ~/.ssh
+   71  git pull --rebase
+   72  salt-call state.sls salt.master --local
+   73  service salt-master restart
+   74  service salt-master status
+   75  tail -500 /var/log/salt/master
+   76  salt-call state.sls salt
+   77  vi /etc/hosts
+   78  salt-call state.sls salt --master=salt-stg
+   79  salt-call state.sls salt --master=10.20.0.193
+   80  salt-key -L
+   81  salt-key -a salt*
+   82  salt-call state.sls salt --master=10.20.0.193
+   83  salt-call state.sls system.hostfile --master=10.20.0.193
+   84  salt-key -L
+   85  salt-call pillar.get ec2 --local
+   86  salt-key -a salt*
+   87  salt-call pillar.get ec2
+   88  salt-call pillar.get ec2 --master=10.20.0.193
+   89  salt-call saltutil.sync_al --master=10.20.0.193
+   90  salt-call saltutil.sync_all --master=10.20.0.193
+   91  python
+   92  pip install boto
+   93  export LC_ALL=C
+   94  pip install boto
+   95  salt-call pillar.get ec2 --master=10.20.0.193
+   96  python
+   97  salt-call saltutil.sync_all --master=10.20.0.193
+   98  salt-call pillar.get ec2 --master=10.20.0.193
+   99  vi /var/cache/salt/minion/extmods/grains/ec2.py
+  100  salt-call pillar.get ec2 --master=10.20.0.193
+  101  vi /var/cache/salt/minion/extmods/grains/ec2.py
+  102  git pull --rebase
+  103  salt-call saltutil.sync_all --master=10.20.0.193
+  104  salt-call pillar.get ec2 --master=10.20.0.193
+  105  salt-call pillar.get ec2 --master=10.20.0.193 --local
+  106  python
+  107  salt-call pillar.get ec2 --master=10.20.0.193 --debug
+  108  salt-call pillar.get ec2 --master=10.20.0.193 --l debug
+  109  salt-call pillar.get ec2 --master=10.20.0.193 -l debug
+  110  salt-call pillar.items --master=10.20.0.193 -l debug
+  111  salt-call grains.get ec2 --master=10.20.0.193
+  112  salt-call state.sls system.hostfile --master=10.20.0.193
+  113  salt-call state.sls salt --master=10.20.0.193
+  114  git pull --rebase
+  115  salt-call state.sls salt --master=10.20.0.193
+  116  salt-key -L
+  117  salt-key -a salt*
+  118  salt-key -d salt-stg
+  119  salt-key -d salt-stg.namshi.net
+  120  salt-call state.sls salt --master=10.20.0.193
+  121  salt-key -L
+  122  salt-key -a salt*
+  123  salt-call state.sls salt
+  124  salt-call state.sls system
+  125  vi ~/.aws/credentials
+  126  salt-call pillar.get nmprofile
+  127  vi .git/config
+  128  git pull --rebase
+  129  salt-call state.sls system
+  130  salt-call state.sls salt.master
+  131  salt-call state.sls aws
+  132  cat ~/.aws/credentials
+  133  salt-call state.sls system
+  134  git pull --rebase
+  135  salt-call state.sls system
+  136  salt-call state.highstate
+  137  git pull --rebase
+  138  salt-call state.highstate
+  139  telnet db11-cluster.cluster-cniyjgwngmlz.ap-south-1.rds.amazonaws.com 3306
+  140  git pull --rebase
+  141  salt-call state.highstate
+  142  git pull --rebase
+  143  salt-call state.highstate
+  144  cd /etc/salt/
+  145  git status
+  146  git pull --rebase
+  147  salt-call state.sls users
+  148  salt-call state.highstate
+  149  exit
+  150  cd /etc/salt/
+  151  git status
+  152  git pull --rebase
+  153  salt-call state.sls users
+  154  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
+  155  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo "Dumping DB: ${db}" ; mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com  $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
+  156  exit
+  157  for db in "bob_staging_ae"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
+  158  for db in "bob_staging_sa bob_staging_intl cerberus_staging jerry_staging"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
+  159  for db in "bob_staging_sa"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
+  160  for db in "bob_staging_intl"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
+  161  for db in "cerberus_staging"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
+  162  for db in "jerry_staging"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
+  163  exit
+  164  cd /etc/salt/
+  165  salt-call state.highstate
+  166  curl icanhazip.com
+  167  mysql --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com
+  168  mysql --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show database;"
+  169  mysql --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;"
+  170  mysql -N -s --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show database;"
+  171  mysql -N -s --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;"
+  172  mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;"
+  173  mysql --defaults-group-suffix=db11
+  174  vi ~/.my.cnf
+  175  vi /etc/hosts
+  176  dig +short db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com
+  177  git pull --rebasw
+  178  git pull --rebase
+  179  salt-call state.highstate
+  180  mysql --defaults-group-suffix=db11
+  181  mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | grep -vE "(information_schema|mysql|performance_schema)"
+  182  mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"
+  183  echo $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
+  184  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)")
+  185  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
+  186  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo $db ; done
+  187  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
+  188  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo 'Creating DB: $db' ; mysql --defaults-group-suffix=db11 -e 'create database $db;' ; echo 'Done creating db: $db' ; done
+  189  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
+  190  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo 'Creating DB: ${db}' ; echo 'Done creating db: ${db}' ; done
+  191  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
+  192  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo 'Creating DB: ${db}' ; echo "Done creating db: ${db}" ; done
+  193  mysql --defaults-group-suffix=db11
+  194  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
+  195  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo "Creating DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ; echo "Done creating db: ${db}" ; done
+  196  salt-call state.highstate
+  197  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
+  198  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo "Dumping DB: ${db}" ; mysqldump -d --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
+  199  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
+  200  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo "Dumping DB: ${db}" ; mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
+  201  mysql --defaults-group-suffix=db11
+  202  tmux
+  203  salt-call state.highstate
+  204  tmux
+  205  curl icanhazip.com
+  206  cd /etc/salt/
+  207  git status
+  208  git pull --rebase
+  209  git pull --rebase
+  210  git pull --rebase
+  211  supervisorctl status
+  212  git pull --rebase
+  213  salt "*" state.sls users
+  214  tail -50f /var/log/fail2ban.log
+  215  service fail2ban stop
+  216  iptables -nL -t nat
+  217  salt-call state.sls fail2ban
+  218  iptables -nL -t nat
+  219  vi /etc/fail2ban/fail2ban.conf
+  220  service fail2ban stop
+  221  iptables -nL -t nat
+  222  tail -50f /var/log/fail2ban.log
+  223  vi /etc/fail2ban/jail.conf
+  224  exit
+  225  apt-get upgrade
+  226  apt-get install linux-headers-generic linux-headers-virtual linux-image-virtual linux-virtual
+  227  apt-get upgrade
+  228  sudo apt autoremove
+  229  cd /etc/salt
+  230  git status
+  231  git pull --rebase
+  232  mysql --defaults-group-suffix=db11
+  233  salt update
+  234  saltUpdate
+  235  vi cloud.profiles
+  236  git status
+  237  git pull --rebase
+  238  salt-call state.sls salt.master
+  239  salt-cloud-profile-generator.py -h
+  240  salt-cloud-profile-generator.py cerb11 -e debian-base
+  241  vi /usr/local/bin/salt-cloud-profile-generator.py
+  242  salt-cloud-profile-generator.py cerb11 -e debian-base
+  243  vi cloud.profiles
+  244  vi cloud.providers
+  245  hostname
+  246  hostname -f
+  247  vi cloud.providers
+  248  salt-cloud -p cerb11 cerb11
+  249  git diff
+  250  git status
+  251  git pull --rebase
+  252  ssh -i /root/.ssh/nmshroot.pem -p 22 admin@10.22.24.21
+  253  ssh -i /root/.ssh/nmshroot.pem -p 22 admin@10.22.24.216
+  254  cd /etc/salt/
+  255  git pull --rebase
+  256  salt-call state.sls salt.master test=true
+  257  vi ~/.aws/credentials
+  258  salt-call state.sls
+  259  salt-call state.sls aws.secgroup test=true
+  260  salt-call state.sls aws.secgroup
+  261  salt-call state.sls aws.secgroup -l debug
+  262  git pull --rebase
+  263  salt-call state.sls aws.secgroup
+  264  git pull --rebase
+  265  salt-cloud-profile-generator.py
+  266  salt-cloud-profile-generator.py -h
+  267  salt-cloud-profile-generator.py cerb11 -n cerb12 -s subnet-7f8db135 -e debian-base
+  268  salt-cloud -p cerb12 cerb12
+  269  git pull --rebase
+  270  >
+  271  ssh -i /root/.ssh/nmshroot.pem -p 22 admin@10.22.47.10
+  272  cd /etc/salt/
+  273  git pull --rebase
+  274  git status
+  275  salt "*" state.sls users
+  276  cat /etc/salt/cloud.profiles.d/bob11.conf
+  277  cd /etc/salt/
+  278  g
+  279  git status
+  280  git log -2
+  281  git push -f origin salt-india
+  282  git status
+  283  git pull --rebase
+  284  salt-cloud-profile-generator.py cerb11 -n bob11 -t m4.large -e debian-base
+  285  `cat /etc/salt/cloud.profiles.d/bob11.conf`
+  286  salt-cloud-profile-generator.py cerb11 -n bob11 -t m4.large -e debian-base
+  287  `cat /etc/salt/cloud.profiles.d/bob11.conf`
+  288  cat /etc/salt/cloud.profiles.d/bob11.conf`
+  289  ls
+  290  ll
+  291  cd etc/salt
+  292  cd /etc/salt
+  293  ls
+  294  git branch
+  295  git pull --rebase
+  296  git branch
+  297  history
+  298  git branch
+  299  git checkout master
+  300  git pull --rebase
+  301  git status
+  302  git pull --rebase origin master
+  303  git status
+  304  git diff
+  305  git branch
+  306  git pull --rebase
+  307  git checkout salt-india
+  308  git pull --rebase
+  309  git status
+  310  cat /etc/salt/cloud.profiles.d/bob11.conf
+  311  git pull --rebase origin salt-india
+  312  salt-call state.sls salt.master
+  313  salt-cloud -p bob11 bob11
+  314  ssh adisu@10.22.24.216
+  315  ssh -i@10.22.24.216
+  316  exit
+  317  cd /etc/salt/state/
+  318  ll
+  319  cd base
+  320  ll
+  321  cd ../
+  322  atom .
+  323  su -adisu
+  324  exit
+  325  ssh -i /root/.ssh/nmshroot.pem -p 22 admin@10.22.31.159
+  326  salt 'bob*' state.highstate
+  327  ll /tmp/ssh-mpVyxAq5aa/agent.14493
+  328  exit
+  329  ls
+  330  exit
+  331  cd /etc/
+  332  ll
+  333  cd logrotate.d/
+  334  ll
+  335  atom nginx
+  336  cd ../
+  337  cd salt/
+  338  git pull --rebase
+  339  git pull --rebase
+  340  `salt-cloud-profile-generator.py cerb11 -n bob11 -t m4.large -e debian-base`
+  341  salt-cloud-profile-generator.py bob11 -n java11 -t m4.large -e debian-base
+  342  salt-cloud -p java11 java11
+  343  -i /root/.ssh/nmshroot.pem -p 22 admin@10.22.31.4
+  344  sudo -i /root/.ssh/nmshroot.pem -p 22 admin@10.22.31.4
+  345  ssh -i /root/.ssh/nmshroot.pem -p 22 admin@10.22.31.4
+  346  exit
+  347  cd /etc/salt
+  348  git pull --rebase
+  349  vi state/base/system/files/etc/hosts
+  350  vi /etc/hosts
+  351  vi state/base/system/files/etc/hosts
+  352  git pull --rebase
+  353  #git reset --hard
+  354  git status
+  355  git reset --hard
+  356  git pull --rebase
+  357*
+  358  mysql --defaults-group-suffix=db11
