@@ -49,14 +49,7 @@
    49  git rm pillar/staging/aws.sls
    50  rm pillar/staging/aws.sls
    51  ls
-   52  git status
-   53  git diff
-   54  git pull --rebase
-   55  git checkout salt-india
-   56  salt-call state.sls salt.master --local
-   57  salt-call saltutil.sync_all --local
-   58  salt-call pillar.items --local
-   59  vi pillar/top.sls
+   52
    60  git status
    61  git pull --rebase
    62  salt-call pillar.items --local
@@ -128,99 +121,8 @@
   128  git pull --rebase
   129  salt-call state.sls system
   130  salt-call state.sls salt.master
-  131  salt-call state.sls aws
-  132  cat ~/.aws/credentials
-  133  salt-call state.sls system
-  134  git pull --rebase
-  135  salt-call state.sls system
-  136  salt-call state.highstate
-  137  git pull --rebase
-  138  salt-call state.highstate
-  139  telnet db11-cluster.cluster-cniyjgwngmlz.ap-south-1.rds.amazonaws.com 3306
-  140  git pull --rebase
-  141  salt-call state.highstate
-  142  git pull --rebase
-  143  salt-call state.highstate
-  144  cd /etc/salt/
-  145  git status
-  146  git pull --rebase
-  147  salt-call state.sls users
-  148  salt-call state.highstate
-  149  exit
-  150  cd /etc/salt/
-  151  git status
-  152  git pull --rebase
-  153  salt-call state.sls users
-  154  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
-  155  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo "Dumping DB: ${db}" ; mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com  $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
-  156  exit
-  157  for db in "bob_staging_ae"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
-  158  for db in "bob_staging_sa bob_staging_intl cerberus_staging jerry_staging"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
-  159  for db in "bob_staging_sa"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
-  160  for db in "bob_staging_intl"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
-  161  for db in "cerberus_staging"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
-  162  for db in "jerry_staging"; do echo "Dumping DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "drop database ${db};" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ;mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
-  163  exit
-  164  cd /etc/salt/
-  165  salt-call state.highstate
-  166  curl icanhazip.com
-  167  mysql --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com
-  168  mysql --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show database;"
-  169  mysql --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;"
-  170  mysql -N -s --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show database;"
-  171  mysql -N -s --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;"
-  172  mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;"
-  173  mysql --defaults-group-suffix=db11
-  174  vi ~/.my.cnf
-  175  vi /etc/hosts
-  176  dig +short db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com
-  177  git pull --rebasw
-  178  git pull --rebase
   179  salt-call state.highstate
-  180  mysql --defaults-group-suffix=db11
-  181  mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | grep -vE "(information_schema|mysql|performance_schema)"
-  182  mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"
-  183  echo $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
-  184  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)")
-  185  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
-  186  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo $db ; done
-  187  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
-  188  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo 'Creating DB: $db' ; mysql --defaults-group-suffix=db11 -e 'create database $db;' ; echo 'Done creating db: $db' ; done
-  189  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
-  190  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo 'Creating DB: ${db}' ; echo 'Done creating db: ${db}' ; done
-  191  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
-  192  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo 'Creating DB: ${db}' ; echo "Done creating db: ${db}" ; done
-  193  mysql --defaults-group-suffix=db11
-  194  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
-  195  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo "Creating DB: ${db}" ; mysql --defaults-group-suffix=db11 -e "create database ${db};" ; echo "Done creating db: ${db}" ; done
-  196  salt-call state.highstate
-  197  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
-  198  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo "Dumping DB: ${db}" ; mysqldump -d --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
-  199  for db in $(mysql --defaults-group-suffix=db11 -N -s -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -e "show databases;" | \
-  200  grep -vE "(information_schema|mysql|performance_schema|innodb|sys)"); do echo "Dumping DB: ${db}" ; mysqldump --defaults-group-suffix=db11 -h db11.cr4qthkcvc5v.ap-southeast-1.rds.amazonaws.com -d $db | mysql --defaults-group-suffix=db11 $db ; echo "Done dumping db: ${db}" ; done
-  201  mysql --defaults-group-suffix=db11
-  202  tmux
-  203  salt-call state.highstate
-  204  tmux
-  205  curl icanhazip.com
-  206  cd /etc/salt/
-  207  git status
-  208  git pull --rebase
-  209  git pull --rebase
-  210  git pull --rebase
-  211  supervisorctl status
-  212  git pull --rebase
-  213  salt "*" state.sls users
-  214  tail -50f /var/log/fail2ban.log
-  215  service fail2ban stop
-  216  iptables -nL -t nat
-  217  salt-call state.sls fail2ban
-  218  iptables -nL -t nat
-  219  vi /etc/fail2ban/fail2ban.conf
-  220  service fail2ban stop
-  221  iptables -nL -t nat
-  222  tail -50f /var/log/fail2ban.log
-  223  vi /etc/fail2ban/jail.conf
+  180
   224  exit
   225  apt-get upgrade
   226  apt-get install linux-headers-generic linux-headers-virtual linux-image-virtual linux-virtual
@@ -286,27 +188,7 @@
   286  salt-cloud-profile-generator.py cerb11 -n bob11 -t m4.large -e debian-base
   287  `cat /etc/salt/cloud.profiles.d/bob11.conf`
   288  cat /etc/salt/cloud.profiles.d/bob11.conf`
-  289  ls
-  290  ll
-  291  cd etc/salt
-  292  cd /etc/salt
-  293  ls
-  294  git branch
-  295  git pull --rebase
-  296  git branch
-  297  history
-  298  git branch
-  299  git checkout master
-  300  git pull --rebase
-  301  git status
-  302  git pull --rebase origin master
-  303  git status
-  304  git diff
-  305  git branch
-  306  git pull --rebase
-  307  git checkout salt-india
-  308  git pull --rebase
-  309  git status
+  289
   310  cat /etc/salt/cloud.profiles.d/bob11.conf
   311  git pull --rebase origin salt-india
   312  salt-call state.sls salt.master

@@ -7,3 +7,59 @@ salt-call state.highstate
 
 
 systemctl status nginx - check the error for nginx
+
+salt-call state.highstate
+    2  ll
+    3  /usr
+    4  cd /etc
+    5  ll
+    6  systemctl status nginx
+    7  cd nginx/
+    8  vi nginx.conf
+    9  salt-call state.highstate
+   10  vi nginx.conf
+   11  salt-call state.highstate
+   12  vi nginx.conf
+   13  systemctl status nginx.service
+   14  cd ../
+   15  ls
+   16  cd logrotate.d/
+   17  ll
+   18  atom nginx
+   19  vi nginx
+   20  systemctl status nginx
+   21  cd ../nginx/
+   22  vi nginx.conf
+   23  apt-get -f install
+   24  salt-call state.highstate
+   25  systemctl status nginx.service
+   26  vi nginx.conf
+   27  apt-get -f install nginx
+   28  salt-call state.highstate
+   29  salt-call pillar.items
+   30  salt-call pillar.item config_deployment:slack
+   31  salt-call pillar.item config_deployment:slack:rooms
+   32  salt-call pillar.item config_deployment:slack:rooms:live
+   33  salt-call pillar.item config_deployment:slack:rooms:staging
+   34  salt-call state.highstate
+   35  vi /etc/deploy/bin/settings.mk
+   36  salt-call state.highstate
+   37  deploy
+   38  salt-call state.highstate
+   39  deploy
+   40  mysql -h db11
+   41  telnet bob11 3306
+   42  cat /etc/hosts
+   43  telnet db11 3306
+   44  deploy
+   45  deploy
+   46  curl --user "admin:rock4me" "http://solr-staging-AE:8082/admin/cores?action=UNLOAD&core=AE"
+   47  deploy
+   48  deploy
+   49  deploy
+   50  deploy
+   51  tail -50f /shop/logs/AE/staging/nginx/bob.access.log
+   52  vi /etc/nginx/conf.d/bob-AE-location.staging.conf
+   53  vi /etc/nginx/sites-enabled/AE/bob.staging.conf
+   54  vi /etc/nginx/sites-enabled/SA/bob.staging.conf
+   55  vi /etc/nginx/sites-enabled/INTL/bob.staging.conf 
